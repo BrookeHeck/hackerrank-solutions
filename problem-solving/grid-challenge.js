@@ -1,31 +1,28 @@
 'use strict';
 
 function gridChallenge(grid) {
-  // return selectionSort(grid);
-  return sort(grid);
-}
+  const gridArr = [];
+  grid.forEach(str => {
+    const charArr = str.split('');
+    const sortedArr = charArr.sort();
+    gridArr.push(sortedArr);
+  });
 
-function sort(str) {
-  let charArr = str.split('');
-  let sortedArr = charArr.sort();
-  return sortedArr.join('');
-}
-
-function selectionSort(str) {
-  let charArr = str.split('');
-  const n = charArr.length;
-
-  for (let i = 0; i < n; i++) {
-    for (let j = (i + 1); j < n; j++) {
-      let min = i;
-      if (charArr[i] > charArr[j]) min = j;
-      let temp = charArr[min];
-      charArr[min] = charArr[i];
-      charArr[i] = temp;
-    }
-  }
-
-  return charArr.join('');
+  const isSorted = gridArr.every((charArr, index) => {
+    let next = gridArr[index + 1];
+    let isValid = true;
+    if(next) {
+      for(let i = 0; i < charArr.length; i++) {
+        if(charArr[i] <= next[i]) isValid = true;
+        else {
+          isValid = false;
+          break;
+        };
+      }
+    } else isValid = true;
+    return isValid;
+  });
+  return isSorted ? 'YES' : 'NO';
 }
 
 module.exports = gridChallenge;

@@ -1,11 +1,5 @@
-const timeConversions = require('./time-conversion');
+const gridChallenge = require('./grid-challenge');
 
-const time = '12:01:00AM';
-const time2 = '07:05:45PM';
-const time3 = '09:00:11AM';
-const time4 = '12:00:00PM';
+const string = 'jgkdagskjea';
 
-console.log(timeConversions(time));
-console.log(timeConversions(time2));
-console.log(timeConversions(time3));
-console.log(timeConversions(time4));
+console.log(gridChallenge(string));

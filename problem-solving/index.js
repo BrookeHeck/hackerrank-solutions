@@ -1,13 +1,6 @@
-const gridChallenge = require('./grid-challenge');
+const kangaroo = require('./number-line-jumps.js');
 
-// const string = 'jgkdagskjea';
+console.log(kangaroo(0, 3, 4, 2));
 
-const strGrid = ['abc', 'cdf', 'zzz'];
-const strGrid2 = ['trf', 'aab', 'ert'];
-const strGrid3 = ['cdf', 'abc', 'eee'];
-const strGrid4 = ['cba', 'dcb', 'fec'];
 
-console.log(gridChallenge(strGrid));
-console.log(gridChallenge(strGrid2));
-console.log(gridChallenge(strGrid3));
-console.log(gridChallenge(strGrid4));
+
